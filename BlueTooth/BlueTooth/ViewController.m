@@ -10,6 +10,7 @@
 #import <CoreBluetooth/CoreBluetooth.h>
 #import "DeviceDetailViewController.h"
 #import "BlueToothManager.h"
+#import "PhotoIntervalSettingViewController.h"
 
 
 @interface ViewController ()<UITableViewDataSource,UITableViewDelegate>
@@ -32,6 +33,8 @@
     
     
     self.deviceArray = [NSMutableArray array];
+//    [self.deviceArray addObject:[CBPeripheral new]];
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(findDevice:) name:kFindNewBlueToothDevice object:nil];
 }
 
@@ -127,6 +130,16 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
+    
+    
+//    PhotoIntervalSettingViewController *s =  [[UIStoryboard  storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"timeIntervalSetting"];
+//    
+//    [self.navigationController pushViewController:s animated:YES];
+    
+    
+//    timeIntervalSetting
+//    [self  performSegueWithIdentifier:@"timeIntervalSetting" sender:nil];
     
     [self performSegueWithIdentifier:@"pushDetailDevice" sender:[self.deviceArray  objectAtIndex:indexPath.row]];
 }

@@ -29,6 +29,26 @@ NSString    *timeIntervalStep6 = @"timeIntervalStep6";
 @property (strong, nonatomic) IBOutlet UITextField *timeIntervalStep6;
 
 
+
+- (IBAction)intervalStep1_add:(UIButton *)sender;
+- (IBAction)intervalStep1_plus:(UIButton *)sender;
+
+- (IBAction)intervalStep2_add:(UIButton *)sender;
+- (IBAction)intervalStep2_plus:(UIButton *)sender;
+
+- (IBAction)intervalStep3_add:(UIButton *)sender;
+- (IBAction)intervalStep3_plus:(UIButton *)sender;
+
+- (IBAction)intervalStep4_add:(UIButton *)sender;
+- (IBAction)intervalStep4_plus:(UIButton *)sender;
+
+- (IBAction)intervalStep5_add:(UIButton *)sender;
+- (IBAction)intervalStep5_plus:(UIButton *)sender;
+
+- (IBAction)intervalStep6_add:(UIButton *)sender;
+- (IBAction)intervalStep6_plus:(UIButton *)sender;
+
+
 @end
 
 
@@ -101,4 +121,105 @@ NSString    *timeIntervalStep6 = @"timeIntervalStep6";
 }
 
 
+- (IBAction)intervalStep1_add:(UIButton *)sender {
+    
+    int  v = self.timeIntervalStep1.text.intValue;
+    self.timeIntervalStep1.text = @(++v).description;
+    
+}
+
+- (IBAction)intervalStep1_plus:(UIButton *)sender{
+    
+    int  v = self.timeIntervalStep1.text.intValue;
+    
+    if (v <= 0) {
+        
+        [AlertMessage alert:@"时间间隔不能小于0"];
+        return;
+    }
+    
+    self.timeIntervalStep1.text = @(--v).description;
+}
+
+- (IBAction)intervalStep2_add:(UIButton *)sender{
+    
+    int  v = self.timeIntervalStep2.text.intValue;
+    self.timeIntervalStep2.text = @(++v).description;
+}
+- (IBAction)intervalStep2_plus:(UIButton *)sender{
+    
+    int  v = self.timeIntervalStep2.text.intValue;
+    if (v <= 0) {
+        
+        [AlertMessage alert:@"时间间隔不能小于0"];
+        return;
+    }
+    self.timeIntervalStep2.text = @(--v).description;
+}
+
+- (IBAction)intervalStep3_add:(UIButton *)sender{
+    
+    int  v = self.timeIntervalStep3.text.intValue;
+    self.timeIntervalStep3.text = @(++v).description;
+}
+- (IBAction)intervalStep3_plus:(UIButton *)sender{
+    
+    int  v = self.timeIntervalStep3.text.intValue;
+    if (v <= 0) {
+        
+        [AlertMessage alert:@"时间间隔不能小于0"];
+        return;
+    }
+    self.timeIntervalStep3.text = @(--v).description;
+}
+
+- (IBAction)intervalStep4_add:(UIButton *)sender{
+    
+    int  v = self.timeIntervalStep4.text.intValue;
+    self.timeIntervalStep4.text = @(++v).description;
+}
+- (IBAction)intervalStep4_plus:(UIButton *)sender{
+ 
+    int  v = self.timeIntervalStep4.text.intValue;
+    if (v <= 0) {
+        
+        [AlertMessage alert:@"时间间隔不能小于0"];
+        return;
+    }
+    self.timeIntervalStep4.text = @(--v).description;
+}
+
+- (IBAction)intervalStep5_add:(UIButton *)sender{
+    
+    int  v = self.timeIntervalStep5.text.intValue;
+    self.timeIntervalStep5.text = @(++v).description;
+}
+
+- (IBAction)intervalStep5_plus:(UIButton *)sender{
+    
+    int  v = self.timeIntervalStep5.text.intValue;
+    if (v <= 0) {
+        
+        [AlertMessage alert:@"时间间隔不能小于0"];
+        return;
+    }
+    self.timeIntervalStep5.text = @(--v).description;
+}
+
+
+- (IBAction)intervalStep6_add:(UIButton *)sender{
+    
+    int  v = self.timeIntervalStep6.text.intValue;
+    self.timeIntervalStep6.text = @(++v).description;
+}
+- (IBAction)intervalStep6_plus:(UIButton *)sender{
+    
+    int  v = self.timeIntervalStep6.text.intValue;
+    if (v <= 0) {
+        
+        [AlertMessage alert:@"时间间隔不能小于0"];
+        return;
+    }
+    self.timeIntervalStep6.text = @(--v).description;
+}
 @end

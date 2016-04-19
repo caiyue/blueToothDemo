@@ -436,7 +436,7 @@
                             <barButtonItem title="设置时间间隔" id="PuT-ki-peg">
                                 <connections>
                                     <action selector="setPhotoInterval:" destination="7ri-TJ-h3w" id="cX4-Uv-fud"/>
-                                    <segue destination="N92-GE-O1O" kind="push" id="af5-S9-m44"/>
+                                    <segue destination="N92-GE-O1O" kind="push" identifier="timeIntervalSetting" id="af5-S9-m44"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
@@ -449,7 +449,7 @@
         <!--Photo Interval Setting View Controller-->
         <scene sceneID="aov-FA-OR0">
             <objects>
-                <viewController id="N92-GE-O1O" customClass="PhotoIntervalSettingViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="timeIntervalSetting" useStoryboardIdentifierAsRestorationIdentifier="YES" id="N92-GE-O1O" customClass="PhotoIntervalSettingViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5hp-hK-BVk"/>
                         <viewControllerLayoutGuide type="bottom" id="mhg-7y-CZD"/>
@@ -530,6 +530,114 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TPI-z9-rwN">
+                                <rect key="frame" x="496" y="119" width="30" height="30"/>
+                                <color key="backgroundColor" red="0.21617195424321159" green="0.61546956806282727" blue="0.13965193421791261" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="+"/>
+                                <connections>
+                                    <action selector="intervalStep1_add:" destination="N92-GE-O1O" eventType="touchUpInside" id="rlR-OJ-dIu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e47-Lv-NET">
+                                <rect key="frame" x="555" y="119" width="30" height="30"/>
+                                <color key="backgroundColor" red="0.21617195419999999" green="0.61546956809999998" blue="0.13965193419999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <state key="normal" title="-"/>
+                                <connections>
+                                    <action selector="intervalStep1_plus:" destination="N92-GE-O1O" eventType="touchUpInside" id="JTf-6i-iVT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uge-HC-lxm">
+                                <rect key="frame" x="496" y="176" width="30" height="30"/>
+                                <color key="backgroundColor" red="0.21617195419999999" green="0.61546956809999998" blue="0.13965193419999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="+"/>
+                                <connections>
+                                    <action selector="intervalStep2_add:" destination="N92-GE-O1O" eventType="touchUpInside" id="cOc-4n-5Cm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T1I-45-cty">
+                                <rect key="frame" x="555" y="176" width="30" height="30"/>
+                                <color key="backgroundColor" red="0.21617195419999999" green="0.61546956809999998" blue="0.13965193419999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <state key="normal" title="-"/>
+                                <connections>
+                                    <action selector="intervalStep2_plus:" destination="N92-GE-O1O" eventType="touchUpInside" id="K27-ee-XO1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xVk-xi-SE9">
+                                <rect key="frame" x="496" y="229" width="30" height="30"/>
+                                <color key="backgroundColor" red="0.21617195419999999" green="0.61546956809999998" blue="0.13965193419999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="+"/>
+                                <connections>
+                                    <action selector="intervalStep3_add:" destination="N92-GE-O1O" eventType="touchUpInside" id="qBA-F1-US2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Avh-8K-Uev">
+                                <rect key="frame" x="555" y="229" width="30" height="30"/>
+                                <color key="backgroundColor" red="0.21617195419999999" green="0.61546956809999998" blue="0.13965193419999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <state key="normal" title="-"/>
+                                <connections>
+                                    <action selector="intervalStep3_plus:" destination="N92-GE-O1O" eventType="touchUpInside" id="6Vj-JG-wqT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HMM-HR-vC5">
+                                <rect key="frame" x="496" y="274" width="30" height="30"/>
+                                <color key="backgroundColor" red="0.21617195419999999" green="0.61546956809999998" blue="0.13965193419999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="+"/>
+                                <connections>
+                                    <action selector="intervalStep4_add:" destination="N92-GE-O1O" eventType="touchUpInside" id="jz0-lw-ahK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZFl-fv-3Vf">
+                                <rect key="frame" x="555" y="274" width="30" height="30"/>
+                                <color key="backgroundColor" red="0.21617195419999999" green="0.61546956809999998" blue="0.13965193419999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <state key="normal" title="-"/>
+                                <connections>
+                                    <action selector="intervalStep4_plus:" destination="N92-GE-O1O" eventType="touchUpInside" id="TO4-4s-U79"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lhN-ws-PAn">
+                                <rect key="frame" x="496" y="337" width="30" height="30"/>
+                                <color key="backgroundColor" red="0.21617195419999999" green="0.61546956809999998" blue="0.13965193419999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="+"/>
+                                <connections>
+                                    <action selector="intervalStep5_add:" destination="N92-GE-O1O" eventType="touchUpInside" id="R9W-ph-AUM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UfO-WV-DfD">
+                                <rect key="frame" x="555" y="337" width="30" height="30"/>
+                                <color key="backgroundColor" red="0.21617195419999999" green="0.61546956809999998" blue="0.13965193419999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <state key="normal" title="-"/>
+                                <connections>
+                                    <action selector="intervalStep5_plus:" destination="N92-GE-O1O" eventType="touchUpInside" id="5v8-y1-fZQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WBv-qV-JXP">
+                                <rect key="frame" x="496" y="390" width="30" height="30"/>
+                                <color key="backgroundColor" red="0.21617195419999999" green="0.61546956809999998" blue="0.13965193419999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="+"/>
+                                <connections>
+                                    <action selector="intervalStep6_add:" destination="N92-GE-O1O" eventType="touchUpInside" id="Adz-tv-CPu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KsA-Gy-1Yq">
+                                <rect key="frame" x="555" y="390" width="30" height="30"/>
+                                <color key="backgroundColor" red="0.21617195419999999" green="0.61546956809999998" blue="0.13965193419999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <state key="normal" title="-"/>
+                                <connections>
+                                    <action selector="intervalStep6_plus:" destination="N92-GE-O1O" eventType="touchUpInside" id="s5H-XT-Nlw"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>

@@ -417,6 +417,11 @@ extern char *global_light_data;
 - (IBAction)light1_add:(UIButton *)sender {
     
     
+    if (![self connected]){
+
+              return;
+        }
+    
     int light = self.light_1_label.text.intValue;
     if (light >= 100) {
         
@@ -424,7 +429,7 @@ extern char *global_light_data;
         return;
     }else{
         
-        self.light_1_label.text = @(light++).description;
+        self.light_1_label.text = @(++light).description;
     }
     
     memset(global_light_data + 7, light, 1);
@@ -435,6 +440,11 @@ extern char *global_light_data;
 
 - (IBAction)light1_plus:(UIButton *)sender {
     
+    if (![self connected]){
+        
+        return;
+    }
+    
     int light = self.light_1_label.text.intValue;
     if (light <= 0) {
         
@@ -442,7 +452,7 @@ extern char *global_light_data;
         return;
     }else{
         
-        self.light_1_label.text = @(light--).description;
+        self.light_1_label.text = @(--light).description;
     }
     
     memset(global_light_data + 7, light, 1);
@@ -453,6 +463,11 @@ extern char *global_light_data;
 
 - (IBAction)light2_add:(UIButton *)sender{
     
+    if (![self connected]){
+        
+        return;
+    }
+    
     int light = self.light_1_label.text.intValue;
     if (light >= 100) {
         
@@ -460,13 +475,18 @@ extern char *global_light_data;
         return;
     }else{
         
-        self.light_1_label.text = @(light++).description;
+        self.light_1_label.text = @(++light).description;
     }
     
     memset(global_light_data + 6, light, 1);
      [self writeToDevice];
 }
 - (IBAction)light2_plus:(UIButton *)sender{
+    
+    if (![self connected]){
+        
+        return;
+    }
     
     int light = self.light_1_label.text.intValue;
     if (light <= 0) {
@@ -475,7 +495,7 @@ extern char *global_light_data;
         return;
     }else{
         
-        self.light_1_label.text = @(light--).description;
+        self.light_1_label.text = @(--light).description;
     }
     
     memset(global_light_data + 6, light, 1);
@@ -487,6 +507,11 @@ extern char *global_light_data;
 
 - (IBAction)light3_add:(UIButton *)sender{
     
+    if (![self connected]){
+        
+        return;
+    }
+    
     int light = self.light_1_label.text.intValue;
     if (light >= 100) {
         
@@ -494,15 +519,21 @@ extern char *global_light_data;
         return;
     }else{
         
-        self.light_1_label.text = @(light++).description;
+        self.light_1_label.text = @(++light).description;
     }
     
     memset(global_light_data + 5, light, 1);
     
      [self writeToDevice];
 }
+
 - (IBAction)light3_plus:(UIButton *)sender{
  
+    if (![self connected]){
+        
+        return;
+    }
+    
     int light = self.light_1_label.text.intValue;
     if (light <= 0) {
         
@@ -510,7 +541,7 @@ extern char *global_light_data;
         return;
     }else{
         
-        self.light_1_label.text = @(light--).description;
+        self.light_1_label.text = @(--light).description;
     }
     
     memset(global_light_data + 5, light, 1);
@@ -522,6 +553,11 @@ extern char *global_light_data;
 
 - (IBAction)light4_add:(UIButton *)sender{
     
+    if (![self connected]){
+        
+        return;
+    }
+    
     int light = self.light_1_label.text.intValue;
     if (light >= 100) {
         
@@ -529,7 +565,7 @@ extern char *global_light_data;
         return;
     }else{
         
-        self.light_1_label.text = @(light++).description;
+        self.light_1_label.text = @(++light).description;
     }
     
     memset(global_light_data + 4, light, 1);
@@ -539,6 +575,11 @@ extern char *global_light_data;
 }
 - (IBAction)light4_plus:(UIButton *)sender{
     
+    if (![self connected]){
+        
+        return;
+    }
+    
     int light = self.light_1_label.text.intValue;
     if (light <= 0) {
         
@@ -546,7 +587,7 @@ extern char *global_light_data;
         return;
     }else{
         
-        self.light_1_label.text = @(light--).description;
+        self.light_1_label.text = @(--light).description;
     }
     
     memset(global_light_data + 4, light, 1);
@@ -556,6 +597,11 @@ extern char *global_light_data;
 
 - (IBAction)light5_add:(UIButton *)sender{
     
+    if (![self connected]){
+        
+        return;
+    }
+    
     int light = self.light_1_label.text.intValue;
     if (light >= 100) {
         
@@ -563,7 +609,7 @@ extern char *global_light_data;
         return;
     }else{
         
-        self.light_1_label.text = @(light++).description;
+        self.light_1_label.text = @(++light).description;
     }
     
     memset(global_light_data + 3, light, 1);
@@ -573,6 +619,12 @@ extern char *global_light_data;
 }
 - (IBAction)light5_plus:(UIButton *)sender{
     
+    
+    if (![self connected]){
+        
+        return;
+    }
+    
     int light = self.light_1_label.text.intValue;
     if (light <= 0) {
         
@@ -580,7 +632,7 @@ extern char *global_light_data;
         return;
     }else{
         
-        self.light_1_label.text = @(light--).description;
+        self.light_1_label.text = @(--light).description;
     }
     
     memset(global_light_data + 3, light, 1);
@@ -592,6 +644,12 @@ extern char *global_light_data;
 
 - (IBAction)light6_add:(UIButton *)sender{
     
+    
+    if (![self connected]){
+        
+        return;
+    }
+    
     int light = self.light_1_label.text.intValue;
     if (light >= 100) {
         
@@ -599,7 +657,7 @@ extern char *global_light_data;
         return;
     }else{
         
-        self.light_1_label.text = @(light++).description;
+        self.light_1_label.text = @(++light).description;
     }
     
     memset(global_light_data + 2, light, 1);
@@ -608,6 +666,11 @@ extern char *global_light_data;
 }
 - (IBAction)light6_plus:(UIButton *)sender{
     
+    if (![self connected]){
+        
+        return;
+    }
+    
     int light = self.light_1_label.text.intValue;
     if (light <= 0) {
         
@@ -615,7 +678,7 @@ extern char *global_light_data;
         return;
     }else{
         
-        self.light_1_label.text = @(light--).description;
+        self.light_1_label.text = @(--light).description;
     }
     
     memset(global_light_data + 2, light, 1);
