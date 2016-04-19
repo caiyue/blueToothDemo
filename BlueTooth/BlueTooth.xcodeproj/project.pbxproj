@@ -12,7 +12,6 @@
 		67416BE71C155009001409A0 /* PhotosTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 67416BE61C155009001409A0 /* PhotosTableViewCell.m */; };
 		67416BEA1C15502E001409A0 /* PhotoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67416BE91C15502E001409A0 /* PhotoDetailViewController.m */; };
 		678369DF1C1290D9005B8696 /* PhotoIntervalSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 678369DE1C1290D9005B8696 /* PhotoIntervalSettingViewController.m */; };
-		678369E11C129C6D005B8696 /* 11.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 678369E01C129C6D005B8696 /* 11.jpg */; };
 		678FB09B1BF0A374005F4BDF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 678FB09A1BF0A374005F4BDF /* main.m */; };
 		678FB09E1BF0A374005F4BDF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 678FB09D1BF0A374005F4BDF /* AppDelegate.m */; };
 		678FB0A11BF0A374005F4BDF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 678FB0A01BF0A374005F4BDF /* ViewController.m */; };
@@ -37,7 +36,6 @@
 		67416BE91C15502E001409A0 /* PhotoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoDetailViewController.m; sourceTree = "<group>"; };
 		678369DD1C1290D9005B8696 /* PhotoIntervalSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoIntervalSettingViewController.h; sourceTree = "<group>"; };
 		678369DE1C1290D9005B8696 /* PhotoIntervalSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoIntervalSettingViewController.m; sourceTree = "<group>"; };
-		678369E01C129C6D005B8696 /* 11.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 11.jpg; sourceTree = "<group>"; };
 		678FB0961BF0A373005F4BDF /* BlueTooth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlueTooth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		678FB09A1BF0A374005F4BDF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		678FB09C1BF0A374005F4BDF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -95,7 +93,6 @@
 			children = (
 				67BD9E8F1BF71AA500B28602 /* BlueToothManager.h */,
 				67BD9E901BF71AA500B28602 /* BlueToothManager.m */,
-				678369E01C129C6D005B8696 /* 11.jpg */,
 				678FB09C1BF0A374005F4BDF /* AppDelegate.h */,
 				678FB09D1BF0A374005F4BDF /* AppDelegate.m */,
 				678FB09F1BF0A374005F4BDF /* ViewController.h */,
@@ -189,7 +186,6 @@
 				678FB0A91BF0A374005F4BDF /* LaunchScreen.storyboard in Resources */,
 				678FB0A61BF0A374005F4BDF /* Assets.xcassets in Resources */,
 				678FB0A41BF0A374005F4BDF /* Main.storyboard in Resources */,
-				678369E11C129C6D005B8696 /* 11.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
