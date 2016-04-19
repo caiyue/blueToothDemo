@@ -1,3 +1,6 @@
+
+
+
 //
 //  DeviceDetailViewController.m
 //  BlueTooth
@@ -130,6 +133,13 @@ extern char *global_light_data;
 //    self.navigationItem.rightBarButtonItem = nil;
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+     [self reset:nil];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -209,208 +219,410 @@ extern char *global_light_data;
 //
 }
 
-- (IBAction)light1:(UISlider *)sender {
-    
-    if (![self connected]){
-        
-        sender.value = 0.0;
-        return;
-    }
-//    char value = (char)sender.value;
-    int offset = sender.value;
-    lastValue = [[self.valueDict objectForKey:@"1"] intValue];
-    if (lastValue > 100 || lastValue < 0) {
-        
-        lastValue = (int)sender.value;
-    }
-    
-    if (abs((int)offset - lastValue)  <  5) {
-        
-        return;
-    }else{
-        [self.valueDict setObject:@(sender.value) forKey:@"1"];
-    }
-   
-    self.light_1_label.text = @(sender.value).description;
-   
-    
-//    if (global_light_data == 0) {
+//- (IBAction)light1:(UISlider *)sender {
+//    
+//    if (![self connected]){
 //        
-//        global_light_data = global_light_data | offset << 56;
-//    }else
-//        global_light_data = global_light_data & (0x0011111111111111 | offset << 56);
-    
-//    global_light_data[0] = (char)offset;
-    memset(global_light_data + 7, offset, 1);
-//    [self print:global_light_data];
-//    NSLog(@"write value %lld",value);
-//     NSLog(@"write light1 offset:%lld value:%lld",offset,global_light_data);
-//    NSData  *data = [NSData dataWithBytes:global_light_data length:8];    
-//    [self.manager writeValue:data forCBCharacteristic:[self.manager characterForUUID:kCharacteristicUUID] ToPeripheral:self.device];
+//        sender.value = 0.0;
+//        return;
+//    }
+////    char value = (char)sender.value;
+//    int offset = sender.value;
+//    lastValue = [[self.valueDict objectForKey:@"1"] intValue];
+//    if (lastValue > 100 || lastValue < 0) {
+//        
+//        lastValue = (int)sender.value;
+//    }
+//    
+//    if (abs((int)offset - lastValue)  <  5) {
+//        
+//        return;
+//    }else{
+//        [self.valueDict setObject:@(sender.value) forKey:@"1"];
+//    }
+//   
+//    self.light_1_label.text = @(sender.value).description;
+//   
+//    
+////    if (global_light_data == 0) {
+////        
+////        global_light_data = global_light_data | offset << 56;
+////    }else
+////        global_light_data = global_light_data & (0x0011111111111111 | offset << 56);
+//    
+////    global_light_data[0] = (char)offset;
+//    memset(global_light_data + 7, offset, 1);
+////    [self print:global_light_data];
+////    NSLog(@"write value %lld",value);
+////     NSLog(@"write light1 offset:%lld value:%lld",offset,global_light_data);
+////    NSData  *data = [NSData dataWithBytes:global_light_data length:8];    
+////    [self.manager writeValue:data forCBCharacteristic:[self.manager characterForUUID:kCharacteristicUUID] ToPeripheral:self.device];
+//
+//    [self writeToDevice];
+//}
+//
+//- (IBAction)light2:(UISlider *)sender {
+//    
+//    if (![self connected]){
+//        
+//        sender.value = 0.0;
+//        return;
+//    }
+//    
+//    
+//    char offset = sender.value;
+//    lastValue = [[self.valueDict objectForKey:@"2"] intValue];
+//    if (lastValue > 100 || lastValue < 0) {
+//        
+//        lastValue = (int)sender.value;
+//    }
+//    
+//    if (abs((int)offset - lastValue)  <  5) {
+//        
+//        return;
+//    }else{
+//        [self.valueDict setObject:@(sender.value) forKey:@"2"];
+//    }
+//    
+//
+//     self.light_2_label.text = @(sender.value).description;
+//    
+//    memset(global_light_data + 6, offset, 1);
+//
+//    [self writeToDevice];
+//}
+//
+//- (IBAction)light3:(UISlider *)sender {
+//    
+//    if (![self connected]){
+//        
+//        sender.value = 0.0;
+//        return;
+//    }
+//    
+//    char offset = sender.value;
+//    lastValue = [[self.valueDict objectForKey:@"3"] intValue];
+//    if (lastValue > 100 || lastValue < 0) {
+//        
+//        lastValue = (int)sender.value;
+//    }
+//    
+//    if (abs((int)offset - lastValue)  <  5) {
+//        
+//        return;
+//    }else{
+//        [self.valueDict setObject:@(sender.value) forKey:@"3"];
+//    }
+//
+//     self.light_3_label.text = @(sender.value).description;
+//    
+//    memset(global_light_data + 5, offset, 1);
+//
+//    
+//    [self writeToDevice];
+//}
+//
+//- (IBAction)light4:(UISlider *)sender {
+//    
+//    if (![self connected]){
+//        
+//        sender.value = 0.0;
+//        return;
+//    }
+//    
+//    char offset = sender.value;
+//    lastValue = [[self.valueDict objectForKey:@"4"] intValue];
+//    if (lastValue > 100 || lastValue < 0) {
+//        
+//        lastValue = (int)sender.value;
+//    }
+//    
+//    if (abs((int)offset - lastValue)  <  5) {
+//        
+//        return;
+//    }else{
+//        [self.valueDict setObject:@(sender.value) forKey:@"4"];
+//    }
+//    
+//    
+//     self.light_4_label.text = @(sender.value).description;
+//
+//    memset(global_light_data + 4, offset, 1);
+//
+//    [self writeToDevice];
+//}
+//
+//- (IBAction)light5:(UISlider *)sender {
+//    
+//    if (![self connected]){
+//        
+//        sender.value = 0.0;
+//        return;
+//    }
+//    
+//    char offset = sender.value;
+//    lastValue = [[self.valueDict objectForKey:@"5"] intValue];
+//    if (lastValue > 100 || lastValue < 0) {
+//        
+//        lastValue = (int)sender.value;
+//    }
+//    
+//    if (abs((int)offset - lastValue)  <  5) {
+//        
+//        return;
+//    }else{
+//        [self.valueDict setObject:@(sender.value) forKey:@"5"];
+//    }
+//
+// 
+//     self.light_5_label.text = @(sender.value).description;
+//
+//    memset(global_light_data + 3, offset, 1);
+//
+//    [self writeToDevice];
+//}
+//
+//- (IBAction)light6:(UISlider *)sender {
+//    
+//    if (![self connected]){
+//        
+//        sender.value = 0.0;
+//        return;
+//    }
+//    
+//    char offset = sender.value;
+//    lastValue = [[self.valueDict objectForKey:@"6"] intValue];
+//    if (lastValue > 100 || lastValue < 0) {
+//        
+//        lastValue = (int)sender.value;
+//    }
+//    
+//    if (abs((int)offset - lastValue)  <  5) {
+//        
+//        return;
+//    }else{
+//        [self.valueDict setObject:@(sender.value) forKey:@"6"];
+//    }
+//    
+//    
+//     self.light_6_label.text = @(sender.value).description;
+//
+//    memset(global_light_data + 2, offset, 1);
+// 
+//    [self writeToDevice];
+//    
+//}
 
-    [self writeToDevice];
-}
-
-- (IBAction)light2:(UISlider *)sender {
-    
-    if (![self connected]){
-        
-        sender.value = 0.0;
-        return;
-    }
-    
-    
-    char offset = sender.value;
-    lastValue = [[self.valueDict objectForKey:@"2"] intValue];
-    if (lastValue > 100 || lastValue < 0) {
-        
-        lastValue = (int)sender.value;
-    }
-    
-    if (abs((int)offset - lastValue)  <  5) {
-        
-        return;
-    }else{
-        [self.valueDict setObject:@(sender.value) forKey:@"2"];
-    }
-    
-
-     self.light_2_label.text = @(sender.value).description;
-    
-    memset(global_light_data + 6, offset, 1);
-
-    [self writeToDevice];
-}
-
-- (IBAction)light3:(UISlider *)sender {
-    
-    if (![self connected]){
-        
-        sender.value = 0.0;
-        return;
-    }
-    
-    char offset = sender.value;
-    lastValue = [[self.valueDict objectForKey:@"3"] intValue];
-    if (lastValue > 100 || lastValue < 0) {
-        
-        lastValue = (int)sender.value;
-    }
-    
-    if (abs((int)offset - lastValue)  <  5) {
-        
-        return;
-    }else{
-        [self.valueDict setObject:@(sender.value) forKey:@"3"];
-    }
-
-     self.light_3_label.text = @(sender.value).description;
-    
-    memset(global_light_data + 5, offset, 1);
-
-    
-    [self writeToDevice];
-}
-
-- (IBAction)light4:(UISlider *)sender {
-    
-    if (![self connected]){
-        
-        sender.value = 0.0;
-        return;
-    }
-    
-    char offset = sender.value;
-    lastValue = [[self.valueDict objectForKey:@"4"] intValue];
-    if (lastValue > 100 || lastValue < 0) {
-        
-        lastValue = (int)sender.value;
-    }
-    
-    if (abs((int)offset - lastValue)  <  5) {
-        
-        return;
-    }else{
-        [self.valueDict setObject:@(sender.value) forKey:@"4"];
-    }
-    
-    
-     self.light_4_label.text = @(sender.value).description;
-
-    memset(global_light_data + 4, offset, 1);
-
-    [self writeToDevice];
-}
-
-- (IBAction)light5:(UISlider *)sender {
-    
-    if (![self connected]){
-        
-        sender.value = 0.0;
-        return;
-    }
-    
-    char offset = sender.value;
-    lastValue = [[self.valueDict objectForKey:@"5"] intValue];
-    if (lastValue > 100 || lastValue < 0) {
-        
-        lastValue = (int)sender.value;
-    }
-    
-    if (abs((int)offset - lastValue)  <  5) {
-        
-        return;
-    }else{
-        [self.valueDict setObject:@(sender.value) forKey:@"5"];
-    }
-
- 
-     self.light_5_label.text = @(sender.value).description;
-
-    memset(global_light_data + 3, offset, 1);
-
-    [self writeToDevice];
-}
-
-- (IBAction)light6:(UISlider *)sender {
-    
-    if (![self connected]){
-        
-        sender.value = 0.0;
-        return;
-    }
-    
-    char offset = sender.value;
-    lastValue = [[self.valueDict objectForKey:@"6"] intValue];
-    if (lastValue > 100 || lastValue < 0) {
-        
-        lastValue = (int)sender.value;
-    }
-    
-    if (abs((int)offset - lastValue)  <  5) {
-        
-        return;
-    }else{
-        [self.valueDict setObject:@(sender.value) forKey:@"6"];
-    }
-    
-    
-     self.light_6_label.text = @(sender.value).description;
-
-    memset(global_light_data + 2, offset, 1);
- 
-    [self writeToDevice];
-    
-}
 
 - (IBAction)light1_add:(UIButton *)sender {
     
     
+    int light = self.light_1_label.text.intValue;
+    if (light >= 100) {
+        
+        [AlertMessage alert:@"不能大于 100"];
+        return;
+    }else{
+        
+        self.light_1_label.text = @(light++).description;
+    }
     
+    memset(global_light_data + 7, light, 1);
+    
+    [self writeToDevice];
+
 }
 
 - (IBAction)light1_plus:(UIButton *)sender {
+    
+    int light = self.light_1_label.text.intValue;
+    if (light <= 0) {
+        
+        [AlertMessage alert:@"不能小于 0"];
+        return;
+    }else{
+        
+        self.light_1_label.text = @(light--).description;
+    }
+    
+    memset(global_light_data + 7, light, 1);
+    
+     [self writeToDevice];
 }
+
+
+- (IBAction)light2_add:(UIButton *)sender{
+    
+    int light = self.light_1_label.text.intValue;
+    if (light >= 100) {
+        
+        [AlertMessage alert:@"不能大于 100"];
+        return;
+    }else{
+        
+        self.light_1_label.text = @(light++).description;
+    }
+    
+    memset(global_light_data + 6, light, 1);
+     [self writeToDevice];
+}
+- (IBAction)light2_plus:(UIButton *)sender{
+    
+    int light = self.light_1_label.text.intValue;
+    if (light <= 0) {
+        
+        [AlertMessage alert:@"不能小于 0"];
+        return;
+    }else{
+        
+        self.light_1_label.text = @(light--).description;
+    }
+    
+    memset(global_light_data + 6, light, 1);
+     [self writeToDevice];
+}
+
+
+
+
+- (IBAction)light3_add:(UIButton *)sender{
+    
+    int light = self.light_1_label.text.intValue;
+    if (light >= 100) {
+        
+        [AlertMessage alert:@"不能大于 100"];
+        return;
+    }else{
+        
+        self.light_1_label.text = @(light++).description;
+    }
+    
+    memset(global_light_data + 5, light, 1);
+    
+     [self writeToDevice];
+}
+- (IBAction)light3_plus:(UIButton *)sender{
+ 
+    int light = self.light_1_label.text.intValue;
+    if (light <= 0) {
+        
+        [AlertMessage alert:@"不能小于 0"];
+        return;
+    }else{
+        
+        self.light_1_label.text = @(light--).description;
+    }
+    
+    memset(global_light_data + 5, light, 1);
+     [self writeToDevice];
+}
+
+
+
+
+- (IBAction)light4_add:(UIButton *)sender{
+    
+    int light = self.light_1_label.text.intValue;
+    if (light >= 100) {
+        
+        [AlertMessage alert:@"不能大于 100"];
+        return;
+    }else{
+        
+        self.light_1_label.text = @(light++).description;
+    }
+    
+    memset(global_light_data + 4, light, 1);
+    
+     [self writeToDevice];
+    
+}
+- (IBAction)light4_plus:(UIButton *)sender{
+    
+    int light = self.light_1_label.text.intValue;
+    if (light <= 0) {
+        
+        [AlertMessage alert:@"不能小于 0"];
+        return;
+    }else{
+        
+        self.light_1_label.text = @(light--).description;
+    }
+    
+    memset(global_light_data + 4, light, 1);
+    
+     [self writeToDevice];
+}
+
+- (IBAction)light5_add:(UIButton *)sender{
+    
+    int light = self.light_1_label.text.intValue;
+    if (light >= 100) {
+        
+        [AlertMessage alert:@"不能大于 100"];
+        return;
+    }else{
+        
+        self.light_1_label.text = @(light++).description;
+    }
+    
+    memset(global_light_data + 3, light, 1);
+    
+     [self writeToDevice];
+    
+}
+- (IBAction)light5_plus:(UIButton *)sender{
+    
+    int light = self.light_1_label.text.intValue;
+    if (light <= 0) {
+        
+        [AlertMessage alert:@"不能小于 0"];
+        return;
+    }else{
+        
+        self.light_1_label.text = @(light--).description;
+    }
+    
+    memset(global_light_data + 3, light, 1);
+    
+     [self writeToDevice];
+}
+
+
+
+- (IBAction)light6_add:(UIButton *)sender{
+    
+    int light = self.light_1_label.text.intValue;
+    if (light >= 100) {
+        
+        [AlertMessage alert:@"不能大于 100"];
+        return;
+    }else{
+        
+        self.light_1_label.text = @(light++).description;
+    }
+    
+    memset(global_light_data + 2, light, 1);
+    
+     [self writeToDevice];
+}
+- (IBAction)light6_plus:(UIButton *)sender{
+    
+    int light = self.light_1_label.text.intValue;
+    if (light <= 0) {
+        
+        [AlertMessage alert:@"不能小于 0"];
+        return;
+    }else{
+        
+        self.light_1_label.text = @(light--).description;
+    }
+    
+    memset(global_light_data + 2, light, 1);
+    
+     [self writeToDevice];
+}
+
 
 - (IBAction)playSound:(UIButton *)sender {
     
@@ -425,6 +637,7 @@ extern char *global_light_data;
 
     [self writeToDevice];
 }
+
 
 - (IBAction)closeSound:(UIButton *)sender {
     
@@ -481,62 +694,7 @@ extern char *global_light_data;
     photoVC.device = device;
 }
 
-- (void)beginTakePhotos{
-    
-    //    关闭p0.2 ,点亮p0.3
-    usleep(0);
-    [self performSelector:@selector(writeSomeLight:) withObject:@[@{@"lightNum":@"6",@"lightValue":@"0"},@{@"lightNum":@"5",@"lightValue":@"100"},@{@"lightNum":@"8",@"lightValue":@"100"}]];
-    [self writeToDevice];
-    
-    //    1秒后关闭p0.3,点亮p0.4 6.5秒
-    usleep(1000000);
-    [self performSelector:@selector(writeSomeLight:) withObject:@[@{@"lightNum":@"5",@"lightValue":@"0"},@{@"lightNum":@"4",@"lightValue":@"100"},@{@"lightNum":@"8",@"lightValue":@"100"}]];
-    [self writeToDevice];
-    
-    
-    //    6.5秒后 关闭P0.4,点亮P0.5
-    usleep(6500000);
-    [self performSelector:@selector(writeSomeLight:) withObject:@[@{@"lightNum":@"4",@"lightValue":@"0"},@{@"lightNum":@"3",@"lightValue":@"100"},@{@"lightNum":@"8",@"lightValue":@"100"} ]];
-    [self writeToDevice];
-    
-    
-    //    5.5秒后关闭p0.5 点亮 p0.2 P0.6 微亮 P0.7全亮
-    usleep(5500000);
-    [self performSelector:@selector(writeSomeLight:) withObject:@[@{@"lightNum":@"3",@"lightValue":@"0"},@{@"lightNum":@"6",@"lightValue":@"50"},@{@"lightNum":@"2",@"lightValue":@"50"},@{@"lightNum":@"1",@"lightValue":@"100"},@{@"lightNum":@"8",@"lightValue":@"100"} ]];
-    [self writeToDevice];
-    
-    //    6.5秒后关闭，同时点亮P0.2 p0.7微亮，P0.6全亮
-    usleep(6500000);
-    [self performSelector:@selector(writeSomeLight:) withObject:@[@{@"lightNum":@"6",@"lightValue":@"50"},@{@"lightNum":@"1",@"lightValue":@"50"},@{@"lightNum":@"2",@"lightValue":@"100"},@{@"lightNum":@"8",@"lightValue":@"100"}]];
-    [self writeToDevice];
-    
-    
-    //    5.5秒后 关闭 P0.2 P0.7 P0.6全亮
-    usleep(5500000);
-    [self performSelector:@selector(writeSomeLight:) withObject:@[@{@"lightNum":@"6",@"lightValue":@"0"},@{@"lightNum":@"1",@"lightValue":@"0"},@{@"lightNum":@"2",@"lightValue":@"100"},@{@"lightNum":@"8",@"lightValue":@"100"} ]];
-    [self writeToDevice];
-    
-    //    1秒后关闭p0.6,点亮P0.2
-    usleep(1000000);
-    [self performSelector:@selector(writeSomeLight:) withObject:@[@{@"lightNum":@"2",@"lightValue":@"0"},@{@"lightNum":@"6",@"lightValue":@"100"},@{@"lightNum":@"8",@"lightValue":@"100"}]];
-    [self writeToDevice];
-    
-    
-    usleep(1000000);
-    memset(global_light_data, 0, 8);//清空数据，防止影响其他功能。
-    [self writeToDevice];
-    [AlertMessage alert:@"执行完毕"];
 
-}
-
-
-- (void)writeLightWithInfo:(NSDictionary *)dict{
-    
-    NSInteger lightNum = [[dict objectForKey:@"lightNum"] integerValue];
-    int value  = [[dict objectForKey:@"lightValue"] intValue];
-    
-    [self writeLight:lightNum withValue:value];
-}
 
 - (void)writeLight:(NSInteger)lightNum withValue:(int)value{
     
@@ -553,20 +711,6 @@ extern char *global_light_data;
     
     NSData  *data = [NSData dataWithBytes:global_light_data length:8];
     [self.blueToothManager writeValue:data forCBCharacteristic:[self.blueToothManager characterForUUID:kCharacteristicUUID] ToPeripheral:self.device];
-}
-
-//同时点亮多个光源
-- (void)writeSomeLight:(NSArray *)array{
-    
-    for (NSDictionary *dict in array) {
-        
-        NSInteger lightNum = [[dict objectForKey:@"lightNum"] integerValue];
-        int         value = [[dict objectForKey:@"lightValue"] intValue];
-        
-        
-        [self writeLight:lightNum withValue:value];
-    }
-    
 }
 
 
