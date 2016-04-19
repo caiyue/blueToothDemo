@@ -20,13 +20,36 @@ extern char *global_light_data;
 - (IBAction)writeData:(UIButton *)sender;
 - (IBAction)readData:(UIButton *)sender;
 
+
+
 //光源控制
-- (IBAction)light1:(UISlider *)sender;
-- (IBAction)light2:(UISlider *)sender;
-- (IBAction)light3:(UISlider *)sender;
-- (IBAction)light4:(UISlider *)sender;
-- (IBAction)light5:(UISlider *)sender;
-- (IBAction)light6:(UISlider *)sender;
+//- (IBAction)light1:(UISlider *)sender;
+//- (IBAction)light2:(UISlider *)sender;
+//- (IBAction)light3:(UISlider *)sender;
+//- (IBAction)light4:(UISlider *)sender;
+//- (IBAction)light5:(UISlider *)sender;
+//- (IBAction)light6:(UISlider *)sender;
+- (IBAction)light1_add:(UIButton *)sender;
+- (IBAction)light1_plus:(UIButton *)sender;
+
+- (IBAction)light2_add:(UIButton *)sender;
+- (IBAction)light2_plus:(UIButton *)sender;
+
+- (IBAction)light3_add:(UIButton *)sender;
+- (IBAction)light3_plus:(UIButton *)sender;
+
+
+- (IBAction)light4_add:(UIButton *)sender;
+- (IBAction)light4_plus:(UIButton *)sender;
+
+- (IBAction)light5_add:(UIButton *)sender;
+- (IBAction)light5_plus:(UIButton *)sender;
+
+- (IBAction)light6_add:(UIButton *)sender;
+- (IBAction)light6_plus:(UIButton *)sender;
+
+
+
 
 - (IBAction)playSound:(UIButton *)sender;
 - (IBAction)closeSound:(UIButton *)sender;
@@ -378,6 +401,15 @@ extern char *global_light_data;
  
     [self writeToDevice];
     
+}
+
+- (IBAction)light1_add:(UIButton *)sender {
+    
+    
+    
+}
+
+- (IBAction)light1_plus:(UIButton *)sender {
 }
 
 - (IBAction)playSound:(UIButton *)sender {

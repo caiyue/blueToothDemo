@@ -136,42 +136,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="PYC-mJ-nMp">
-                                <rect key="frame" x="290" y="341" width="229" height="31"/>
-                                <connections>
-                                    <action selector="light1:" destination="LxZ-yF-DGh" eventType="valueChanged" id="NOI-19-c9A"/>
-                                </connections>
-                            </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="iZK-HP-At4">
-                                <rect key="frame" x="290" y="389" width="229" height="31"/>
-                                <connections>
-                                    <action selector="light2:" destination="LxZ-yF-DGh" eventType="valueChanged" id="wNr-w5-HSL"/>
-                                </connections>
-                            </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="ORz-Ao-pHo">
-                                <rect key="frame" x="290" y="443" width="229" height="31"/>
-                                <connections>
-                                    <action selector="light3:" destination="LxZ-yF-DGh" eventType="valueChanged" id="fY6-2C-vxC"/>
-                                </connections>
-                            </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="uy0-ab-CgM">
-                                <rect key="frame" x="290" y="502" width="229" height="31"/>
-                                <connections>
-                                    <action selector="light4:" destination="LxZ-yF-DGh" eventType="valueChanged" id="O9E-lR-ObK"/>
-                                </connections>
-                            </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="YpN-mc-hDj">
-                                <rect key="frame" x="290" y="562" width="229" height="31"/>
-                                <connections>
-                                    <action selector="light5:" destination="LxZ-yF-DGh" eventType="valueChanged" id="y5J-T8-upW"/>
-                                </connections>
-                            </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="TKq-LG-Y0R">
-                                <rect key="frame" x="290" y="615" width="229" height="31"/>
-                                <connections>
-                                    <action selector="light6:" destination="LxZ-yF-DGh" eventType="valueChanged" id="vZh-PY-0pI"/>
-                                </connections>
-                            </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="蜂鸣器:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X1q-Up-p4P">
                                 <rect key="frame" x="124" y="675" width="62" height="40"/>
                                 <color key="backgroundColor" red="0.27206481710000002" green="0.65198863640000004" blue="0.17055711870000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -309,6 +273,114 @@
                                 <connections>
                                     <action selector="closeSound:" destination="LxZ-yF-DGh" eventType="touchUpInside" id="u9W-ib-ISp"/>
                                     <action selector="playSound:" destination="LxZ-yF-DGh" eventType="touchUpInside" id="C9M-1X-Jzv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j66-3U-d1W">
+                                <rect key="frame" x="322" y="342" width="81" height="39"/>
+                                <color key="backgroundColor" red="0.27206481710000002" green="0.65198863640000004" blue="0.17055711870000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="增加"/>
+                                <connections>
+                                    <action selector="light1_add:" destination="LxZ-yF-DGh" eventType="touchUpInside" id="Itv-3L-OOc"/>
+                                    <action selector="playSound:" destination="LxZ-yF-DGh" eventType="touchUpInside" id="Mjd-Oa-bWT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OZ8-Oz-YCl">
+                                <rect key="frame" x="426" y="341" width="82" height="40"/>
+                                <color key="backgroundColor" red="0.27206481710000002" green="0.65198863640000004" blue="0.17055711870000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="减少"/>
+                                <connections>
+                                    <action selector="light1_plus:" destination="LxZ-yF-DGh" eventType="touchUpInside" id="XLk-5u-QhL"/>
+                                    <action selector="playSound:" destination="LxZ-yF-DGh" eventType="touchUpInside" id="CyB-uk-LZv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eIn-Fj-cNv">
+                                <rect key="frame" x="322" y="390" width="81" height="39"/>
+                                <color key="backgroundColor" red="0.27206481710000002" green="0.65198863640000004" blue="0.17055711870000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="增加"/>
+                                <connections>
+                                    <action selector="light2_add:" destination="LxZ-yF-DGh" eventType="touchUpInside" id="Ple-Q4-KV5"/>
+                                    <action selector="playSound:" destination="LxZ-yF-DGh" eventType="touchUpInside" id="3mv-3s-tzS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vVj-lp-vbA">
+                                <rect key="frame" x="426" y="389" width="82" height="40"/>
+                                <color key="backgroundColor" red="0.27206481710000002" green="0.65198863640000004" blue="0.17055711870000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="减少"/>
+                                <connections>
+                                    <action selector="light2_plus:" destination="LxZ-yF-DGh" eventType="touchUpInside" id="Bfy-rp-wQv"/>
+                                    <action selector="playSound:" destination="LxZ-yF-DGh" eventType="touchUpInside" id="nuI-vC-Vca"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bcP-St-Yj2">
+                                <rect key="frame" x="322" y="444" width="81" height="39"/>
+                                <color key="backgroundColor" red="0.27206481710000002" green="0.65198863640000004" blue="0.17055711870000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="增加"/>
+                                <connections>
+                                    <action selector="light3_add:" destination="LxZ-yF-DGh" eventType="touchUpInside" id="HI3-2d-Rpr"/>
+                                    <action selector="playSound:" destination="LxZ-yF-DGh" eventType="touchUpInside" id="bQy-C6-MSk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pts-tz-YqL">
+                                <rect key="frame" x="426" y="443" width="82" height="40"/>
+                                <color key="backgroundColor" red="0.27206481710000002" green="0.65198863640000004" blue="0.17055711870000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="减少"/>
+                                <connections>
+                                    <action selector="light3_plus:" destination="LxZ-yF-DGh" eventType="touchUpInside" id="uWV-Ba-vgc"/>
+                                    <action selector="playSound:" destination="LxZ-yF-DGh" eventType="touchUpInside" id="Ors-EH-mWO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sWy-ic-nNK">
+                                <rect key="frame" x="322" y="503" width="81" height="39"/>
+                                <color key="backgroundColor" red="0.27206481710000002" green="0.65198863640000004" blue="0.17055711870000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="增加"/>
+                                <connections>
+                                    <action selector="light4_add:" destination="LxZ-yF-DGh" eventType="touchUpInside" id="VT0-rn-jtX"/>
+                                    <action selector="playSound:" destination="LxZ-yF-DGh" eventType="touchUpInside" id="BHI-ed-VhM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="giI-Rh-sqe">
+                                <rect key="frame" x="426" y="502" width="82" height="40"/>
+                                <color key="backgroundColor" red="0.27206481710000002" green="0.65198863640000004" blue="0.17055711870000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="减少"/>
+                                <connections>
+                                    <action selector="light4_plus:" destination="LxZ-yF-DGh" eventType="touchUpInside" id="E0Q-NW-TfQ"/>
+                                    <action selector="playSound:" destination="LxZ-yF-DGh" eventType="touchUpInside" id="Lp1-rm-wcR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7yd-N3-Gqq">
+                                <rect key="frame" x="322" y="558" width="81" height="39"/>
+                                <color key="backgroundColor" red="0.27206481710000002" green="0.65198863640000004" blue="0.17055711870000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="增加"/>
+                                <connections>
+                                    <action selector="light5_add:" destination="LxZ-yF-DGh" eventType="touchUpInside" id="893-w3-dBc"/>
+                                    <action selector="playSound:" destination="LxZ-yF-DGh" eventType="touchUpInside" id="KnG-g5-czZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fWO-h6-0VF">
+                                <rect key="frame" x="426" y="557" width="82" height="40"/>
+                                <color key="backgroundColor" red="0.27206481710000002" green="0.65198863640000004" blue="0.17055711870000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="减少"/>
+                                <connections>
+                                    <action selector="light5_plus:" destination="LxZ-yF-DGh" eventType="touchUpInside" id="eXS-h1-7Gy"/>
+                                    <action selector="playSound:" destination="LxZ-yF-DGh" eventType="touchUpInside" id="FYt-cs-MUw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nmg-bH-fl8">
+                                <rect key="frame" x="322" y="616" width="81" height="39"/>
+                                <color key="backgroundColor" red="0.27206481710000002" green="0.65198863640000004" blue="0.17055711870000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="增加"/>
+                                <connections>
+                                    <action selector="light6_add:" destination="LxZ-yF-DGh" eventType="touchUpInside" id="lbU-CQ-6mJ"/>
+                                    <action selector="playSound:" destination="LxZ-yF-DGh" eventType="touchUpInside" id="rrw-bf-0EU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7kv-gN-rRk">
+                                <rect key="frame" x="426" y="615" width="82" height="40"/>
+                                <color key="backgroundColor" red="0.27206481710000002" green="0.65198863640000004" blue="0.17055711870000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="减少"/>
+                                <connections>
+                                    <action selector="light6_plus:" destination="LxZ-yF-DGh" eventType="touchUpInside" id="Kny-vz-dJq"/>
+                                    <action selector="playSound:" destination="LxZ-yF-DGh" eventType="touchUpInside" id="ycn-al-Emd"/>
                                 </connections>
                             </button>
                         </subviews>
