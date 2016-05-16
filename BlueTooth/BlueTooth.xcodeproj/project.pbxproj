@@ -17,7 +17,6 @@
 		678FB0A11BF0A374005F4BDF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 678FB0A01BF0A374005F4BDF /* ViewController.m */; };
 		678FB0A41BF0A374005F4BDF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 678FB0A21BF0A374005F4BDF /* Main.storyboard */; };
 		678FB0A61BF0A374005F4BDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 678FB0A51BF0A374005F4BDF /* Assets.xcassets */; };
-		678FB0A91BF0A374005F4BDF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 678FB0A71BF0A374005F4BDF /* LaunchScreen.storyboard */; };
 		67B978411BF33F8300BA768B /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67B978401BF33F8300BA768B /* CoreBluetooth.framework */; };
 		67BD9E8B1BF7128B00B28602 /* DeviceDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67BD9E8A1BF7128B00B28602 /* DeviceDetailViewController.m */; };
 		67BD9E911BF71AA500B28602 /* BlueToothManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 67BD9E901BF71AA500B28602 /* BlueToothManager.m */; };
@@ -44,7 +43,6 @@
 		678FB0A01BF0A374005F4BDF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		678FB0A31BF0A374005F4BDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		678FB0A51BF0A374005F4BDF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		678FB0A81BF0A374005F4BDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		678FB0AA1BF0A374005F4BDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		67B978401BF33F8300BA768B /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		67BD9E891BF7128B00B28602 /* DeviceDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceDetailViewController.h; sourceTree = "<group>"; };
@@ -109,7 +107,6 @@
 				678369DE1C1290D9005B8696 /* PhotoIntervalSettingViewController.m */,
 				678FB0A21BF0A374005F4BDF /* Main.storyboard */,
 				678FB0A51BF0A374005F4BDF /* Assets.xcassets */,
-				678FB0A71BF0A374005F4BDF /* LaunchScreen.storyboard */,
 				678FB0AA1BF0A374005F4BDF /* Info.plist */,
 				678FB0991BF0A374005F4BDF /* Supporting Files */,
 				672EF6FD1C0AE502004BDEB7 /* AlertMessage.h */,
@@ -183,7 +180,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				678FB0A91BF0A374005F4BDF /* LaunchScreen.storyboard in Resources */,
 				678FB0A61BF0A374005F4BDF /* Assets.xcassets in Resources */,
 				678FB0A41BF0A374005F4BDF /* Main.storyboard in Resources */,
 			);
@@ -218,14 +214,6 @@
 				678FB0A31BF0A374005F4BDF /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		678FB0A71BF0A374005F4BDF /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				678FB0A81BF0A374005F4BDF /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

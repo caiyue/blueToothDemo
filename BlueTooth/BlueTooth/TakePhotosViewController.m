@@ -349,7 +349,7 @@ extern  char *global_light_data;
 }
 
 
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
     
     UIImage * image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
     //    NSLog(@"image size = %@",NSStringFromCGSize( image.size));

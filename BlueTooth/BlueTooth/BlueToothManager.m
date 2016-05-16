@@ -262,10 +262,10 @@ static BlueToothManager  *singleton = nil;
 }
 
 
-- (NSUInteger)MaxdataLengthDataToPeripheral:(CBPeripheral *)peripheral withType:(CBCharacteristicWriteType)type{
-    
-  return  [peripheral maximumWriteValueLengthForType:type];
-}
+//- (NSUInteger)MaxdataLengthDataToPeripheral:(CBPeripheral *)peripheral withType:(CBCharacteristicWriteType)type{
+//    
+//  return  [peripheral maximumWriteValueLengthForType:type];
+//}
 
 - (void)updateLog:(NSString *)string
 {
