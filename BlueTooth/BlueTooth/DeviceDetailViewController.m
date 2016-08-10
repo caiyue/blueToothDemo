@@ -419,7 +419,8 @@ extern char *global_light_data;
     
     if (![self connected]){
 
-              return;
+        [AlertMessage alert:@"设备还未连接"];
+        return;
         }
     
     int light = self.light_1_label.text.intValue;
@@ -442,6 +443,7 @@ extern char *global_light_data;
     
     if (![self connected]){
         
+        [AlertMessage alert:@"设备还未连接"];
         return;
     }
     
@@ -465,6 +467,7 @@ extern char *global_light_data;
     
     if (![self connected]){
         
+        [AlertMessage alert:@"设备还未连接"];
         return;
     }
     
@@ -485,6 +488,7 @@ extern char *global_light_data;
     
     if (![self connected]){
         
+        [AlertMessage alert:@"设备还未连接"];
         return;
     }
     
@@ -509,6 +513,7 @@ extern char *global_light_data;
     
     if (![self connected]){
         
+        [AlertMessage alert:@"设备还未连接"];
         return;
     }
     
@@ -531,6 +536,7 @@ extern char *global_light_data;
  
     if (![self connected]){
         
+        [AlertMessage alert:@"设备还未连接"];
         return;
     }
     
@@ -555,6 +561,7 @@ extern char *global_light_data;
     
     if (![self connected]){
         
+        [AlertMessage alert:@"设备还未连接"];
         return;
     }
     
@@ -577,6 +584,7 @@ extern char *global_light_data;
     
     if (![self connected]){
         
+        [AlertMessage alert:@"设备还未连接"];
         return;
     }
     
@@ -599,6 +607,7 @@ extern char *global_light_data;
     
     if (![self connected]){
         
+        [AlertMessage alert:@"设备还未连接"];
         return;
     }
     
@@ -622,6 +631,7 @@ extern char *global_light_data;
     
     if (![self connected]){
         
+        [AlertMessage alert:@"设备还未连接"];
         return;
     }
     
@@ -647,6 +657,7 @@ extern char *global_light_data;
     
     if (![self connected]){
         
+        [AlertMessage alert:@"设备还未连接"];
         return;
     }
     
@@ -668,6 +679,7 @@ extern char *global_light_data;
     
     if (![self connected]){
         
+        [AlertMessage alert:@"设备还未连接"];
         return;
     }
     
@@ -691,7 +703,7 @@ extern char *global_light_data;
     
     if (![self connected]){
         
-        
+        [AlertMessage alert:@"设备还未连接"];
         return;
     }
     
@@ -706,7 +718,7 @@ extern char *global_light_data;
     
     if (![self connected]){
         
-        
+        [AlertMessage alert:@"设备还未连接"];
         return;
     }
     
@@ -720,6 +732,7 @@ extern char *global_light_data;
 
     if (![self connected]) {
         
+        [AlertMessage alert:@"设备还未连接"];
         return;
     }
 
@@ -739,7 +752,7 @@ extern char *global_light_data;
     
     if (![self connected]) {
         
-
+        [AlertMessage alert:@"设备还未连接"];
         return;
     }
     
@@ -763,6 +776,7 @@ extern char *global_light_data;
     
     if (![self connected]){
         
+        [AlertMessage alert:@"设备还未连接"];
         return;
     }
     
@@ -793,8 +807,7 @@ extern char *global_light_data;
             return YES;
         }
         else{
-            
-            [AlertMessage alert:@"设备还未连接"];
+
             return NO;
         }
     
@@ -818,7 +831,8 @@ extern char *global_light_data;
     }
 }
 
-- (char )covertToCharFromString:(char *)string{
+//字符转为数字
+- (int  )covertToCharFromString:(char *)string{
 
     if (string) {
         
