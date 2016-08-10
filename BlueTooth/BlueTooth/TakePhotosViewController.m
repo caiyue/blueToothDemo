@@ -67,8 +67,16 @@ extern  char *global_light_data;
 
 - (IBAction)takePhotos:(UIBarButtonItem *)sender {
     
-    
+
     [self openCamera];
+    
+    if (!self.settingDict) {
+        [AlertMessage alert:@"拍照时间间隔未设置"];
+        [self performSelector:@selector(back) withObject:nil afterDelay:2.0];
+        return;
+    }
+    
+
     
     UITapGestureRecognizer  *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(back)];
     
@@ -76,7 +84,7 @@ extern  char *global_light_data;
     tap.numberOfTouchesRequired = 1;
     [self.view addGestureRecognizer:tap];
     
-
+    
     
     for (NSString *key  in self.settingDict) {
         

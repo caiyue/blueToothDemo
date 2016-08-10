@@ -223,7 +223,8 @@ static BlueToothManager  *singleton = nil;
             
             NSLog(@"write 0,Do not take photo");
             return;
-        }
+        }else
+            NSLog(@"write %lld to devie",value);
         
         usleep(500000);
         [[NSNotificationCenter defaultCenter] postNotificationName:kWriteToDeviceSuccessfulNotification object:@(value).description];
