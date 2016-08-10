@@ -177,8 +177,6 @@ extern char *global_light_data;
         [AlertMessage alert:@"设备还未连接"];
         return;
     }
-
-    
     
     if (self.textField.text.length == 0) {
         
@@ -186,15 +184,22 @@ extern char *global_light_data;
         return;
     }
     
-    NSString    * value = [self getAbsoulteString:self.textField.text];
+//    判断输入是否合法,合法返回有效数据字符串
+    NSString    *string = [self legalString:self.textField.text];
+    if (!string) {
+        [AlertMessage alert:@"输入格式有误，请输入0x/0X开头的16位数字~~~"];
+        return;
+    }
+
+//    倒序
+    string = [self reverseStringFromString:string];
     
-    //    NSString    *reversedString = [self reverseStringFromString:value];
+//    转换成10进制数组输出
+    char *array = [self getDecimalNumberArrayWithString:string];
     
-    UInt64 result =  [self computeCharFromString:value];
-//    NSLog(@"orgin hex = %x",result);
-//    字节倒叙
-    [self reverseCharFromUint64:&result saveTo:global_light_data];
-//    memcpy(global_light_data, &result, 8);
+    
+//    拷贝所有数据
+    memcpy(global_light_data, array, 8);
     NSData  *data = [NSData dataWithBytes:global_light_data length:8];
     NSUInteger  length = [self.blueToothManager MaxdataLengthDataToPeripheral:self.device withType:CBCharacteristicWriteWithResponse];
     
@@ -207,6 +212,8 @@ extern char *global_light_data;
     [self.blueToothManager writeValue:data forCBCharacteristic:[self.blueToothManager characterForUUID:kCharacteristicUUID] ToPeripheral:self.device];
 }
 
+
+
 - (IBAction)readData:(UIButton *)sender {
     
     if (self.device.state != CBPeripheralStateConnected) {
@@ -216,7 +223,6 @@ extern char *global_light_data;
     }
 
     self.textField.text = [self readString];
-//
 }
 
 //- (IBAction)light1:(UISlider *)sender {
@@ -819,23 +825,80 @@ extern char *global_light_data;
     [[NSNotificationCenter defaultCenter ] removeObserver:self];;
 }
 
-- (void)print:(char*)str
-{
-    NSLog(@"output data =====");
-    int i = 0;
-    char *p = str;
-    while (i < 8) {
-        printf("%d  ",*p);
-        i++;
-        p++;
+
+
+-(NSString *)readString{
+    
+    char *array = global_light_data;
+    NSMutableString *string = [NSMutableString string];
+    for (int i = 0; i < 8; i++) {
+        [string appendString:[NSString stringWithFormat:@"%d ",*(array++)]];
     }
+    
+    return  string;
+}
+
+//判断是否合法，如果合法返回小写的有效字符串，否则返回nil
+-(NSString *)legalString:(NSString *)string{
+    
+    NSString * s = string.lowercaseString;
+    if (![s hasPrefix:@"0x"]) {
+        
+        return nil;
+    }else if(s.length != 18){
+        
+        return  nil;
+    }
+    
+    return [s stringByReplacingOccurrencesOfString:@"0x" withString:@""];
+}
+
+//倒叙string，每个字节不变，也就是每2个字符顺序不变
+-(NSString *) reverseStringFromString:(NSString *)string{
+    
+    NSMutableString *newString = [[NSMutableString alloc] initWithCapacity:string.length];
+    NSString * subString = nil;
+    for (int i = 8;i>=1;i--) {
+        subString = [string substringWithRange:NSMakeRange(i * 2 -2, 2)];
+        [newString appendString:subString];
+    }
+    return newString;
+}
+
+//将16进制字符串转化为10 进制字符串,自左到右
+-(char *)getDecimalNumberArrayWithString:(NSString *)str{
+    
+    //     开辟空间存储转换来的数据
+    char  *numberArray = (char *)malloc(sizeof(int) * (8));
+    char *p = numberArray;
+    
+    NSString * subString = nil;
+    char decimalValue = 0;
+    for (int i = 0;i < 8;i++) {
+        subString = [str substringWithRange:NSMakeRange(i * 2, 2)];
+        decimalValue = [self convertToDecimalNumberWithTwoLetter:subString ];
+        *(p++) = decimalValue;
+    }
+    
+    return numberArray;
+}
+
+
+//核心转换，从字符串转换到10 进制数据
+-(char)  convertToDecimalNumberWithTwoLetter:(NSString *)letters{
+    
+    NSString    *firstString = [letters substringWithRange:NSMakeRange(0, 1)];
+    NSString    *secondString = [letters substringWithRange:NSMakeRange(1, 1)];
+    
+    int  firstChar =  [self covertToNumberFromChar:[firstString cStringUsingEncoding:NSUTF8StringEncoding]];
+    int secondChar = [self  covertToNumberFromChar:[secondString cStringUsingEncoding:NSUTF8StringEncoding]];
+    
+    return firstChar * 16 + secondChar;
 }
 
 //字符转为数字
-- (int  )covertToCharFromString:(char *)string{
-
+-(char) covertToNumberFromChar:(const char *)string{
     if (string) {
-        
         if (*string <= '9' && *string >= '0') {
             
             return *string - 48;
@@ -869,97 +932,4 @@ extern char *global_light_data;
     
     return 0;
 }
-
-////剔除掉0x 0X计算
-- (UInt64)computeCharFromString:(NSString *)string{
-    
-    char *str = string.cString;
-    NSUInteger len = string.length;
-    char  *p = str;
-    UInt64 sum = 0;
-    while (*p != '\0') {
-        
-        sum += ([self covertToCharFromString:p] * pow(16, (str + len - p - 1)));
-        p++;
-    }
-
-    
-    return sum;
-}
-
-- (void)reverseCharFromUint64:(UInt64 *)s saveTo:(char *)d{
-    
-    
-    int len = sizeof(UInt64);
-    char *src = (char *)s;
-    char *dest = (char *)d + len - 1;
-    while (len > 0) {
-        
-        memcpy(dest, src, 1);
-        src++;
-        dest--;
-        len--;
-    }
-    
-}
-
-- (NSString *)readString{
-    
-    int len = sizeof(UInt64) + 1;
-    char *tem = (char *)malloc(sizeof(char) * len);
-    memset(tem, 0, len);
-    char *src = (char *)global_light_data;
-    char *dest = tem + len  - 2;
-    while (len > 1) {
-        
-        memcpy(dest, src, 1);
-        src++;
-        dest--;
-        len--;
-    }
-    
-    
-    
-   return [NSString stringWithCString:tem encoding:NSUTF8StringEncoding];
-}
-
-
-
-//
-//- (NSString *)reverseStringFromString:(NSString *)string{
-//    
-//    NSMutableString *newString = [[NSMutableString alloc] initWithCapacity:string.length];
-//    for (int i = string.length - 1; i >=0 ; i --) {
-//        unichar ch = [string characterAtIndex:i];
-//        [newString appendFormat:@"%c",ch];
-//    }
-//
-//    return newString;
-//}
-//
-//- (void)setValueFromUint64:(UInt64)value{
-//    
-////    global_light_data = & value;
-//    memcpy(&value, global_light_data, 8);
-//    
-//    NSData  *data = [NSData dataWithBytes:global_light_data length:8];
-//    [self.manager writeValue:data forCBCharacteristic:[self.manager characterForUUID:kCharacteristicUUID] ToPeripheral:self.device];
-//
-//    
-//}
-//
-//get absoulte string
-- (NSString*)getAbsoulteString:(NSString *)string{
-    
-    NSString *newString = nil;
-    newString = [string stringByReplacingOccurrencesOfString:@"0x" withString:@""];
-    newString = [string stringByReplacingOccurrencesOfString:@"0X" withString:@""];
-    
-    return newString;
-}
-
-
-
-
-
 @end
