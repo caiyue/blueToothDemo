@@ -192,7 +192,7 @@ extern char *global_light_data;
     }
 
 //    倒序
-    string = [self reverseStringFromString:string];
+//    string = [self reverseStringFromString:string];
     
 //    转换成10进制数组输出
     char *array = [self getDecimalNumberArrayWithString:string];
@@ -477,14 +477,14 @@ extern char *global_light_data;
         return;
     }
     
-    int light = self.light_1_label.text.intValue;
+    int light = self.light_2_label.text.intValue;
     if (light >= 100) {
         
         [AlertMessage alert:@"不能大于 100"];
         return;
     }else{
         
-        self.light_1_label.text = @(++light).description;
+        self.light_2_label.text = @(++light).description;
     }
     
     memset(global_light_data + 6, light, 1);
@@ -498,14 +498,14 @@ extern char *global_light_data;
         return;
     }
     
-    int light = self.light_1_label.text.intValue;
+    int light = self.light_2_label.text.intValue;
     if (light <= 0) {
         
         [AlertMessage alert:@"不能小于 0"];
         return;
     }else{
         
-        self.light_1_label.text = @(--light).description;
+        self.light_2_label.text = @(--light).description;
     }
     
     memset(global_light_data + 6, light, 1);
@@ -523,14 +523,14 @@ extern char *global_light_data;
         return;
     }
     
-    int light = self.light_1_label.text.intValue;
+    int light = self.light_3_label.text.intValue;
     if (light >= 100) {
         
         [AlertMessage alert:@"不能大于 100"];
         return;
     }else{
         
-        self.light_1_label.text = @(++light).description;
+        self.light_3_label.text = @(++light).description;
     }
     
     memset(global_light_data + 5, light, 1);
@@ -546,21 +546,19 @@ extern char *global_light_data;
         return;
     }
     
-    int light = self.light_1_label.text.intValue;
+    int light = self.light_3_label.text.intValue;
     if (light <= 0) {
         
         [AlertMessage alert:@"不能小于 0"];
         return;
     }else{
         
-        self.light_1_label.text = @(--light).description;
+        self.light_3_label.text = @(--light).description;
     }
     
     memset(global_light_data + 5, light, 1);
      [self writeToDevice];
 }
-
-
 
 
 - (IBAction)light4_add:(UIButton *)sender{
@@ -571,14 +569,14 @@ extern char *global_light_data;
         return;
     }
     
-    int light = self.light_1_label.text.intValue;
+    int light = self.light_4_label.text.intValue;
     if (light >= 100) {
         
         [AlertMessage alert:@"不能大于 100"];
         return;
     }else{
         
-        self.light_1_label.text = @(++light).description;
+        self.light_4_label.text = @(++light).description;
     }
     
     memset(global_light_data + 4, light, 1);
@@ -594,14 +592,14 @@ extern char *global_light_data;
         return;
     }
     
-    int light = self.light_1_label.text.intValue;
+    int light = self.light_4_label.text.intValue;
     if (light <= 0) {
         
         [AlertMessage alert:@"不能小于 0"];
         return;
     }else{
         
-        self.light_1_label.text = @(--light).description;
+        self.light_4_label.text = @(--light).description;
     }
     
     memset(global_light_data + 4, light, 1);
@@ -617,14 +615,14 @@ extern char *global_light_data;
         return;
     }
     
-    int light = self.light_1_label.text.intValue;
+    int light = self.light_5_label.text.intValue;
     if (light >= 100) {
         
         [AlertMessage alert:@"不能大于 100"];
         return;
     }else{
         
-        self.light_1_label.text = @(++light).description;
+        self.light_5_label.text = @(++light).description;
     }
     
     memset(global_light_data + 3, light, 1);
@@ -641,14 +639,14 @@ extern char *global_light_data;
         return;
     }
     
-    int light = self.light_1_label.text.intValue;
+    int light = self.light_5_label.text.intValue;
     if (light <= 0) {
         
         [AlertMessage alert:@"不能小于 0"];
         return;
     }else{
         
-        self.light_1_label.text = @(--light).description;
+        self.light_5_label.text = @(--light).description;
     }
     
     memset(global_light_data + 3, light, 1);
@@ -667,14 +665,14 @@ extern char *global_light_data;
         return;
     }
     
-    int light = self.light_1_label.text.intValue;
+    int light = self.light_6_label.text.intValue;
     if (light >= 100) {
         
         [AlertMessage alert:@"不能大于 100"];
         return;
     }else{
         
-        self.light_1_label.text = @(++light).description;
+        self.light_6_label.text = @(++light).description;
     }
     
     memset(global_light_data + 2, light, 1);
@@ -689,14 +687,14 @@ extern char *global_light_data;
         return;
     }
     
-    int light = self.light_1_label.text.intValue;
+    int light = self.light_6_label.text.intValue;
     if (light <= 0) {
         
         [AlertMessage alert:@"不能小于 0"];
         return;
     }else{
         
-        self.light_1_label.text = @(--light).description;
+        self.light_6_label.text = @(--light).description;
     }
     
     memset(global_light_data + 2, light, 1);
