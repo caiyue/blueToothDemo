@@ -51,6 +51,8 @@ extern char *global_light_data;
 - (IBAction)light6_add:(UIButton *)sender;
 - (IBAction)light6_plus:(UIButton *)sender;
 
+- (IBAction)light7_add:(UIButton *)sender;
+- (IBAction)light7_plus:(UIButton *)sender;
 
 
 
@@ -79,8 +81,7 @@ extern char *global_light_data;
 
 @property (strong, nonatomic) IBOutlet UILabel *light_6_label;
 
-
-
+@property (strong,nonatomic)  IBOutlet UILabel *light_7_label;
 
 @end
 
@@ -702,6 +703,48 @@ extern char *global_light_data;
      [self writeToDevice];
 }
 
+- (IBAction)light7_add:(UIButton *)sender{
+    if (![self connected]){
+        [AlertMessage alert:@"设备还未连接"];
+        return;
+    }
+    
+    int light = self.light_7_label.text.intValue;
+    if (light >= 100) {
+        
+        [AlertMessage alert:@"不能大于 100"];
+        return;
+    }else{
+        
+        self.light_7_label.text = @(++light).description;
+    }
+    
+    memset(global_light_data + 1, light, 1);
+    
+    [self writeToDevice];
+}
+- (IBAction)light7_plus:(UIButton *)sender{
+    
+    if (![self connected]){
+        
+        [AlertMessage alert:@"设备还未连接"];
+        return;
+    }
+    
+    int light = self.light_7_label.text.intValue;
+    if (light <= 0) {
+        
+        [AlertMessage alert:@"不能小于 0"];
+        return;
+    }else{
+        self.light_7_label.text = @(--light).description;
+    }
+    
+    memset(global_light_data + 1, light, 1);
+    
+    [self writeToDevice];
+}
+
 
 - (IBAction)playSound:(UIButton *)sender {
     
@@ -710,7 +753,6 @@ extern char *global_light_data;
         [AlertMessage alert:@"设备还未连接"];
         return;
     }
-    
 
     memset(global_light_data, 100, 1);
 
