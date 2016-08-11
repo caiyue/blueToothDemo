@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="ctn-cJ-OFS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="ctn-cJ-OFS">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
@@ -137,14 +137,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="蜂鸣器:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X1q-Up-p4P">
-                                <rect key="frame" x="124" y="675" width="62" height="40"/>
+                                <rect key="frame" x="124" y="726" width="62" height="40"/>
                                 <color key="backgroundColor" red="0.27206481710000002" green="0.65198863640000004" blue="0.17055711870000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YDQ-hH-Fu0">
-                                <rect key="frame" x="292" y="685" width="99" height="30"/>
+                                <rect key="frame" x="322" y="736" width="133" height="30"/>
                                 <color key="backgroundColor" red="0.27206481710000002" green="0.65198863640000004" blue="0.17055711870000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="开"/>
                                 <connections>
@@ -202,7 +202,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="P0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hzM-AI-ZQD">
-                                <rect key="frame" x="212" y="675" width="62" height="40"/>
+                                <rect key="frame" x="212" y="726" width="62" height="40"/>
                                 <color key="backgroundColor" red="0.27206481710000002" green="0.65198863640000004" blue="0.17055711870000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -266,15 +266,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Amd-Og-ad2">
-                                <rect key="frame" x="418" y="685" width="99" height="30"/>
-                                <color key="backgroundColor" red="0.27206481710000002" green="0.65198863640000004" blue="0.17055711870000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="关"/>
-                                <connections>
-                                    <action selector="closeSound:" destination="LxZ-yF-DGh" eventType="touchUpInside" id="u9W-ib-ISp"/>
-                                    <action selector="playSound:" destination="LxZ-yF-DGh" eventType="touchUpInside" id="C9M-1X-Jzv"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j66-3U-d1W">
                                 <rect key="frame" x="322" y="342" width="81" height="39"/>
                                 <color key="backgroundColor" red="0.27206481710000002" green="0.65198863640000004" blue="0.17055711870000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -383,6 +374,54 @@
                                     <action selector="playSound:" destination="LxZ-yF-DGh" eventType="touchUpInside" id="ycn-al-Emd"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="光源7:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gRJ-r6-0Re">
+                                <rect key="frame" x="124" y="672" width="62" height="40"/>
+                                <color key="backgroundColor" red="0.27206481710000002" green="0.65198863640000004" blue="0.17055711870000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="P0.1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FEB-NQ-gB3">
+                                <rect key="frame" x="212" y="672" width="62" height="40"/>
+                                <color key="backgroundColor" red="0.27206481710000002" green="0.65198863640000004" blue="0.17055711870000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1pS-jt-Qi9">
+                                <rect key="frame" x="539" y="672" width="75" height="40"/>
+                                <color key="backgroundColor" red="0.27206481710000002" green="0.65198863640000004" blue="0.17055711870000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qIU-hg-g69">
+                                <rect key="frame" x="322" y="673" width="81" height="39"/>
+                                <color key="backgroundColor" red="0.27206481710000002" green="0.65198863640000004" blue="0.17055711870000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="增加"/>
+                                <connections>
+                                    <action selector="light7_add:" destination="LxZ-yF-DGh" eventType="touchUpInside" id="UwB-fI-1aL"/>
+                                    <action selector="playSound:" destination="LxZ-yF-DGh" eventType="touchUpInside" id="fmF-lB-UTh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xNy-Ee-EmD">
+                                <rect key="frame" x="426" y="672" width="82" height="40"/>
+                                <color key="backgroundColor" red="0.27206481710000002" green="0.65198863640000004" blue="0.17055711870000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="减少"/>
+                                <connections>
+                                    <action selector="light7_plus:" destination="LxZ-yF-DGh" eventType="touchUpInside" id="ecM-ek-oIn"/>
+                                    <action selector="playSound:" destination="LxZ-yF-DGh" eventType="touchUpInside" id="X95-eQ-GXX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Amd-Og-ad2">
+                                <rect key="frame" x="474" y="736" width="140" height="30"/>
+                                <color key="backgroundColor" red="0.27206481710000002" green="0.65198863640000004" blue="0.17055711870000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="关"/>
+                                <connections>
+                                    <action selector="closeSound:" destination="LxZ-yF-DGh" eventType="touchUpInside" id="u9W-ib-ISp"/>
+                                    <action selector="playSound:" destination="LxZ-yF-DGh" eventType="touchUpInside" id="C9M-1X-Jzv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -405,6 +444,7 @@
                         <outlet property="light_4_label" destination="bSj-Ih-K4g" id="fdu-V8-3Jh"/>
                         <outlet property="light_5_label" destination="Zdp-h0-QqW" id="1x4-mU-lzH"/>
                         <outlet property="light_6_label" destination="sYD-gk-XJr" id="93c-O6-cvO"/>
+                        <outlet property="light_7_label" destination="1pS-jt-Qi9" id="WrR-u2-JPi"/>
                         <outlet property="textField" destination="RZX-Pf-4RZ" id="u2X-n5-7qz"/>
                         <segue destination="7ri-TJ-h3w" kind="push" identifier="takePhotos" id="NRh-lT-lDx"/>
                     </connections>
